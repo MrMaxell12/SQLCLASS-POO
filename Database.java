@@ -54,6 +54,12 @@ public class Database {
         return executeSQL(registro.deleteSQL());
     }
 
+    // Código novo pra criar table se não tiver
+    public static boolean criarTabela(SQLClass registro) {
+        return executeSQL(registro.createTableSQL());
+    }   
+
+
     public static boolean abrirID(SQLClass registro, int id) {
         Field[] fields =  registro.getClass().getDeclaredFields();
         boolean ok = false;

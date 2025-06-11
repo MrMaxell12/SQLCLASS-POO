@@ -119,6 +119,11 @@ public abstract class SQLClass {
         return "select * from "+this.tableName;
     } 
 
+    // Linha adicionada pra criar table se não existir
+    public String createTableSQL(){
+        return "create table if not exists "+ this.tableName + " ("+this.fieldsList+")";
+    }
+
     public String insertSQL(){
         this.listFields();
         return "insert into "+ this.tableName + " ("+this.fieldsList+") values ("+this.listValues+")";
