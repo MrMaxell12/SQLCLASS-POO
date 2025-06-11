@@ -1,24 +1,22 @@
 public class SQLFactory {
     public static void main (String[] args){
         
-        Aluno a = new Aluno();
-        a.id = 1;
-        a.nome = "João Pedro Ianke B. de Lima";
-        a.idade = 22;
-        a.cpf = "067.369.931-56";
-        a.curso = "ADS";
+        Disciplina d = new Disciplina();
+        d.setId(5);
+        d.setNome("POO");
+        d.setCargaHoraria(90);
+        d.setCurso("ADS");
+        d.setSemestre("5°");
 
         // Cria a table caso não exista! FUNCIONOOOOOOOOU É TETRA
-        System.out.println(a.createTableSQL());
-        Database.criarTabela(a);
+        System.out.println(d.createTableSQL());
+        Database.criarTabela(d);	
 
-        System.out.println(a.insertSQL());
-        Database.inserirRegistro(a);
+        System.out.println(d.insertSQL());
+        Database.inserirRegistro(d);
         System.out.println("select na tabela:");
-        Database.abrirID(a, 1);
+        Database.abrirID(d, 5);
 
-        System.out.println("id: " + a.id);
-
-        
+        System.out.println("id: " + d.getId());
     }
-}   
+}

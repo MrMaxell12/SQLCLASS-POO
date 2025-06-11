@@ -70,12 +70,15 @@ public class Database {
             ResultSet resultSet = stmt.executeQuery();
 
             for (Field field : fields) {
-                if (field.getType() == String.class) {
-                    field.set(registro, resultSet.getString(field.getName()));
-                } else {
-                    field.set(registro, resultSet.getInt(field.getName()));
-                }
-            }
+        field.setAccessible(true); // <-- ESSENCIAL pra acessar atributos private
+
+        if (field.getType() == String.class) {
+        field.set(registro, resultSet.getString(field.getName()));
+        } else {
+        field.set(registro, resultSet.getInt(field.getName()));
+        }
+}
+
 
             ok = true;
 
