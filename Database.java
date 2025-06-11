@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Database {
     // Tenta abrir uma conexão com o banco de dados SQLite.
     private static Connection connect() {
-        String url = "jdbc:sqlite:db\\data.db"; // Isso define a URL
+        String url = "jdbc:sqlite:db/data.db"; // Isso define a URL
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(url);

@@ -1,19 +1,22 @@
 public class SQLFactory {
     public static void main (String[] args){
 
-        Produto p = new Produto();
-        p.id = 11;
-    
-        p.descricao = "Café 500g";
-        p.preco = 9.90;
-        p.um = "pct";
+        Aluno a = new Aluno();
+        a.id = 1;
+        a.nome = "João Pedro Ianke B. de Lima";
+        a.idade = 22;
+        a.cpf = "067.369.931-56";
+        a.curso = "ADS";
 
-        System.out.println(p.insertSQL());
+
+        System.out.println(a.insertSQL());
     
-        Database.inserirRegistro(p);
+        Database.inserirRegistro(a);
         System.out.println("select na tabela:");
-        Database.abrirID(p, 11);
+        Database.abrirID(a, 1);
 
-        System.out.println("id: " + p.id);
+        System.out.println("id: " + a.id);
+
+        
     }
 }   
