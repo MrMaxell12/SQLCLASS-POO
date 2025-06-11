@@ -8,7 +8,7 @@ public class SQLFactory {
         a.cpf = "067.369.931-56";
         a.curso = "ADS";
 
-        // Cria a table caso não exista!
+        // Cria a table caso não exista! FUNCIONOOOOOOOOU É TETRA
         System.out.println(a.createTableSQL());
         Database.criarTabela(a);
 

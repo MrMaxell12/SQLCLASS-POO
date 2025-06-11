@@ -121,6 +121,7 @@ public abstract class SQLClass {
 
     // Linha adicionada pra criar table se não existir
     public String createTableSQL(){
+        this.listFields();
         return "create table if not exists "+ this.tableName + " ("+this.fieldsList+")";
     }
 
